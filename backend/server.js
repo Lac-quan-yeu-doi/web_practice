@@ -19,8 +19,7 @@ app.use(express.json()); // to parse JSON in req.body
 //   res.send('This is home page');    
 // });
 
-// app.use('/api/products', productRoutes); 
-app.use('/products', productRoutes); // /api matches localhost:5000 configured in vite.config.js => when deploy real web, not use /api
+app.use('/api/products', productRoutes); 
 console.log(process.env.NODE_ENV, process.env.NODE_ENV === "production");
 
 const __dirname = path.resolve();
