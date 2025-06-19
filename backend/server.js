@@ -21,11 +21,11 @@ app.use(express.json()); // to parse JSON in req.body
 
 // app.use('/api/products', productRoutes); 
 app.use('/products', productRoutes); // /api matches localhost:5000 configured in vite.config.js => when deploy real web, not use /api
-console.log(process.env.NODE_ENV, process.env.NODE_ENV == "production ");
+console.log(process.env.NODE_ENV, process.env.NODE_ENV == "production");
 
 const __dirname = path.resolve();
 
-if(process.env.NODE_ENV === 'production ') {
+if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/dist')));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
